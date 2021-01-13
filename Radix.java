@@ -33,7 +33,7 @@ public static int length(int n){
 //find MAX
 int mx = 0;
 for(int i = 0; i < data.size(); i++){
-  mx = Math.max(mx, length(data.get(i)));
+  mx = Math.max(mx, length(data.get(0)));
 }
 
   for (int i = 0; i < mx; i++){
