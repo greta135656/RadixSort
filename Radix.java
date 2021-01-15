@@ -28,20 +28,18 @@ public static int length(int n){
     buckets[i] = new SortableLinkedList();}
 
 //find MAX
-int mx = 0;
-for(int i = 0; i < data.size(); i++){
-  mx = Math.max(mx, length(data.get(0)));
-}
+int mx = 1;
 
   for (int i = 0; i < mx; i++){
     while(data.size()>0){
       int nv = data.remove(0);
       buckets[nth(nv, i)].add(nv);
-    }
+      if(length(nv) > mx){
+      mx = length(nv);
+    }}
     merge(data, buckets);
   }
 }
-
   
 
 
@@ -64,4 +62,3 @@ for(int i = 0; i < data.size(); i++){
     }
     data.extend(positive);
 }}
-
